@@ -18,8 +18,9 @@ ENV PATH $PATH:/
 ENV JAVA_HOME /usr/lib/jvm/java-9-oracle
 ENV CLASSPATH /usr/lib/jvm/java-9-oracle/lib
 
-RUN apt-get install -y ubuntu-gnome-desktop
-RUN apt-get install -y tightvncserver
+RUN apt-get install -y --no-install-recommends ubuntu-desktop
+RUN apt-get install -y gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
+RUN apt-get install -y vnc4server
 
 #RUN vncserver 
 ADD vncserver.init /etc/init.d/vncserver
