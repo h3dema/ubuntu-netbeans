@@ -24,3 +24,5 @@ RUN apt-get install -y ubuntu-gnome-desktop
 RUN apt-get install -y tightvncserver
 
 #RUN vncserver 
+ADD vncserver.init /etc/init.d/vncserver
+RUN ln -s /etc/init.d/vncserver /etc/rc2.d/S99vncserver
