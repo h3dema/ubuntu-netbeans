@@ -13,8 +13,6 @@ RUN apt-get update \
 
 RUN apt-get install -y openssh-server
 
-ADD root/.bashrc /root/.bashrc
-
 # criar as variáveis de ambiente
 ENV PATH $PATH:/
 ENV JAVA_HOME /usr/lib/jvm/java-9-oracle
@@ -26,3 +24,6 @@ RUN apt-get install -y tightvncserver
 #RUN vncserver 
 ADD vncserver.init /etc/init.d/vncserver
 RUN ln -s /etc/init.d/vncserver /etc/rc2.d/S99vncserver
+
+EXPOSE 5901
+RUN vncserver
