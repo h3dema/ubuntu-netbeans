@@ -11,6 +11,8 @@ RUN apt-get update \
     && apt-get install -y oracle-java9-installer \
     && apt-get install -y oracle-java9-set-default 
 
+RUN apt-get install -y openssh-server
+
 ADD root/.bashrc /root/.bashrc
 
 # criar as variáveis de ambiente
@@ -18,4 +20,5 @@ ENV PATH $PATH:/
 ENV JAVA_HOME /usr/lib/jvm/java-9-oracle
 ENV CLASSPATH /usr/lib/jvm/java-9-oracle/lib
 
-RUN apt-get install ubuntu-gnome-desktop
+RUN apt-get install -y ubuntu-gnome-desktop
+RUN apt-get install -y tightvncserver
