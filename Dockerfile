@@ -22,3 +22,5 @@ ENV CLASSPATH /usr/lib/jvm/java-9-oracle/lib
 
 RUN apt-get install -y ubuntu-gnome-desktop
 RUN apt-get install -y tightvncserver
+
+#RUN vncserver 
